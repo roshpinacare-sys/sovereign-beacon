@@ -1,0 +1,29 @@
+{
+  "schema": "roshpina.sovereign-beacon/1",
+  "publisher": "gitlab-ci (ברזל-חוץ-מכונה)",
+  "generatedAt": "2026-10-10T06:14:55Z",
+  "commit": "81697c0fb7ac95ebace5f65336725ae8d3528a01",
+  "commitDate": "2026-10-10T06:01:51Z",
+  "branch": "main",
+  "lastKnownAlive": {
+    "heartAt": "2026-10-10T06:01:05.588Z",
+    "heartChain": "1d8f8a8593eb3b713f7ab530",
+    "worklogSha12": "5c3519c62484",
+    "memorySha12": "7fbfb9c9a673",
+    "vaultBytes": 4708
+  },
+  "memoryLayers": [
+    { "layer": "github", "detail": "roshpinacare-sys/sanbox" },
+    { "layer": "gitlab", "detail": "roshpinacare/sanbox + Pages-הזה" },
+    { "layer": "postgres", "detail": "Supabase sovereign_state (state-replica)" },
+    { "layer": "pages-beacon", "detail": "הקונסולה-הזו — נולדה-ב-CI-חוץ-מכונה" }
+  ],
+  "awakening": [
+    "1. הגיט-הוא-הקוד-המלא: שני-עננים-נושאים-sanbox + vault/vault-backup.enc (AES-256-GCM)",
+    "2. שחזור-כספת: bun core/vault restore — המפתח-הוא-hq.password אצל-Head-Corner",
+    "3. הצתה: sh sanbox/scripts/boot-all.sh — סודות→כספת→מפקח→שומר→HQ-3010",
+    "4. זיכרון-חוץ-מכונה: bun scripts/state-replica.mjs pull",
+    "5. ההתחדשות-אוטומטית: קומיט=הצתה; הלב-פועם-כל-15-דקות"
+  ],
+  "doctrine": "אפס-אמון-בטענות · הכל-מנוטר-בגיט · fail-open-לעננים-חוץ-מכונה · הכספת-נפתחת-רק-בסיסמה"
+}
