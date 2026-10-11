@@ -1,7 +1,7 @@
 {
  "schema": "roshpina.sovereign-beacon/1",
  "publisher": "beacon-pulse (GitHub Actions, keyless public truth)",
- "generatedAt": "2026-10-11T23:02:14Z",
+ "generatedAt": "2026-10-11T23:45:25Z",
  "commit": "81697c0fb7ac95ebace5f65336725ae8d3528a01",
  "commitDate": "2026-10-10T06:01:51Z",
  "branch": "main",
@@ -16,6 +16,15 @@
  "awakening": "[REDACTED — P0-1: restoration/custody detail removed from public surface, master-plan T6, session 8fa4709b]",
  "doctrine": "[REDACTED — P0-1: restoration/custody detail removed from public surface, master-plan T6, session 8fa4709b]",
  "pulses": [
+  {
+   "at": "2026-10-11T23:45:25Z",
+   "sandboxLedgerLastLine": "- **לא-נגעתי:** Domain-marketing (zai-sec/T-60) · תוכן-Adsmarket-עצמו (אפס-עריכות-תוכן) · ריפואים-פרטיות-אחרות",
+   "steemHead": 110360191,
+   "treasuryNetSp": 2925.6,
+   "minOperatorSp": 11.9,
+   "degraded": false,
+   "degradedWhy": []
+  },
   {
    "at": "2026-10-11T23:02:14Z",
    "sandboxLedgerLastLine": "- תוכנית-הסשן: מדידת-commits-חיים-בכל-הריפואים → בחירת-ליין-פתוח-שלא-נלקח → חיווט-ואימות-חי-לפי-האורקל-הקיים; ",
@@ -45,9 +54,9 @@
   }
  ],
  "lastPulse": {
-  "at": "2026-10-11T23:02:14Z",
-  "sandboxLedgerLastLine": "- תוכנית-הסשן: מדידת-commits-חיים-בכל-הריפואים → בחירת-ליין-פתוח-שלא-נלקח → חיווט-ואימות-חי-לפי-האורקל-הקיים; ",
-  "steemHead": 110359330,
+  "at": "2026-10-11T23:45:25Z",
+  "sandboxLedgerLastLine": "- **לא-נגעתי:** Domain-marketing (zai-sec/T-60) · תוכן-Adsmarket-עצמו (אפס-עריכות-תוכן) · ריפואים-פרטיות-אחרות",
+  "steemHead": 110360191,
   "treasuryNetSp": 2925.6,
   "minOperatorSp": 11.9,
   "degraded": false,
