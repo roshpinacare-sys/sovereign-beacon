@@ -1,0 +1,116 @@
+name: beacon-pulse
+# Sovereign Beacon pulse — out-of-machine console heartbeat.
+# Keyless public truth only; replaces the silent gitlab-ci writer (last sync 2026-10-10T06:14Z).
+on:
+  schedule:
+    - cron: "27 * * * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: beacon-pulse
+  cancel-in-progress: false
+
+jobs:
+  pulse:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Measure live truth (public, keyless)
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          python3 - <<'PY'
+          import json, os, time, urllib.request
+
+          NOW = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
+          degraded = []
+
+          def fetch(url, headers=None, timeout=30):
+              req = urllib.request.Request(url)
+              for k, v in (headers or {}).items():
+                  req.add_header(k, v)
+              try:
+                  with urllib.request.urlopen(req, timeout=timeout) as r:
+                      return r.status, r.read()
+              except Exception as e:
+                  degraded.append(url.split("/")[2] + ":" + str(e)[:60])
+                  return None, b""
+
+          def rpc(url, api, args):
+              body = json.dumps({"jsonrpc": "2.0", "method": "call",
+                                 "params": ["condenser_api", api, list(args)], "id": 1}).encode()
+              req = urllib.request.Request(url, data=body,
+                                           headers={"Content-Type": "application/json"})
+              try:
+                  with urllib.request.urlopen(req, timeout=30) as r:
+                      d = json.loads(r.read())
+                  return d.get("result")
+              except Exception as e:
+                  degraded.append("rpc:" + str(e)[:60])
+                  return None
+
+          def num(x):
+              return float(str(x).split()[0])
+
+          pulse = {"at": NOW}
+
+          st, b = fetch("https://raw.githubusercontent.com/roshpinacare-sys/Sandbox/main/ops/AGENT-LEDGER.md")
+          if st == 200:
+              lines = [l for l in b.decode("utf-8", "replace").strip().splitlines() if l.strip()]
+              pulse["sandboxLedgerLastLine"] = lines[-1][:110] if lines else ""
+
+          dp = rpc("https://api.steemit.com", "get_dynamic_global_properties", [])
+          if dp:
+              k = num(dp["total_vesting_fund_steem"]) / num(dp["total_vesting_shares"])
+              pulse["steemHead"] = dp.get("head_block_number")
+              ACCS = ["headcorner", "israelnews", "macrame", "woq", "tov", "lsa", "wic", "wog",
+                      "siq", "cashmachine", "hcsoldier4", "hcsoldier5", "hcsoldier6"]
+              accs = rpc("https://api.steemit.com", "get_accounts", [ACCS]) or []
+              nets = {}
+              for a in accs:
+                  if not a:
+                      continue
+                  nets[a["name"]] = round((num(a["vesting_shares"]) + num(a["received_vesting_shares"])
+                                           - num(a["delegated_vesting_shares"])) * k, 1)
+              pulse["treasuryNetSp"] = nets.get("headcorner")
+              ops = [v for n, v in nets.items() if n != "headcorner" and not n.startswith("hcsoldier")]
+              pulse["minOperatorSp"] = min(ops) if ops else None
+
+          pulse["degraded"] = bool(degraded)
+          pulse["degradedWhy"] = degraded[:5]
+
+          with open("state.json", encoding="utf-8") as f:
+              state = json.load(f)
+          state["generatedAt"] = NOW
+          state["publisher"] = "beacon-pulse (GitHub Actions, keyless public truth)"
+          prev = state.get("pulses") or []
+          prev.insert(0, pulse)
+          state["pulses"] = prev[:40]
+          state["lastPulse"] = pulse
+          fresh = json.dumps(state, ensure_ascii=False, indent=1)
+          with open("state.json", "w", encoding="utf-8") as f:
+              f.write(fresh)
+          # mirror to docs/ copy if present (page source)
+          if os.path.exists("docs/state.json"):
+              with open("docs/state.json", "w", encoding="utf-8") as f:
+                  f.write(fresh)
+          print("PULSE-OK treasury", pulse.get("treasuryNetSp"), "minOp", pulse.get("minOperatorSp"))
+          PY
+
+      - name: Commit pulse (append-only, retry on race)
+        run: |
+          git config user.name "beacon-pulse"
+          git config user.email "actions@users.noreply.github.com"
+          git add state.json docs/state.json
+          if git diff --cached --quiet; then echo "no-change"; exit 0; fi
+          git commit -m "pulse: $(date -u +%Y-%m-%dT%H:%M:%SZ) [skip ci]"
+          for i in 1 2 3; do
+            git push origin main && break
+            sleep 6
+            git pull --rebase origin main || true
+          done
