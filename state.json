@@ -12,18 +12,7 @@
     "memorySha12": "7fbfb9c9a673",
     "vaultBytes": 4708
   },
-  "memoryLayers": [
-    { "layer": "github", "detail": "roshpinacare-sys/sanbox" },
-    { "layer": "gitlab", "detail": "roshpinacare/sanbox + Pages-הזה" },
-    { "layer": "postgres", "detail": "Supabase sovereign_state (state-replica)" },
-    { "layer": "pages-beacon", "detail": "הקונסולה-הזו — נולדה-ב-CI-חוץ-מכונה" }
-  ],
-  "awakening": [
-    "1. הגיט-הוא-הקוד-המלא: שני-עננים-נושאים-sanbox + vault/vault-backup.enc (AES-256-GCM)",
-    "2. שחזור-כספת: bun core/vault restore — המפתח-הוא-hq.password אצל-Head-Corner",
-    "3. הצתה: sh sanbox/scripts/boot-all.sh — סודות→כספת→מפקח→שומר→HQ-3010",
-    "4. זיכרון-חוץ-מכונה: bun scripts/state-replica.mjs pull",
-    "5. ההתחדשות-אוטומטית: קומיט=הצתה; הלב-פועם-כל-15-דקות"
-  ],
-  "doctrine": "אפס-אמון-בטענות · הכל-מנוטר-בגיט · fail-open-לעננים-חוץ-מכונה · הכספת-נפתחת-רק-בסיסמה"
+  "memoryLayers": "[REDACTED — P0-1: restoration/custody detail removed from public surface, master-plan T6, session 8fa4709b]",
+  "awakening": "[REDACTED — P0-1: restoration/custody detail removed from public surface, master-plan T6, session 8fa4709b]",
+  "doctrine": "[REDACTED — P0-1: restoration/custody detail removed from public surface, master-plan T6, session 8fa4709b]"
 }
