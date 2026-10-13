@@ -1,7 +1,7 @@
 {
  "schema": "roshpina.sovereign-beacon/1",
  "publisher": "beacon-pulse (GitHub Actions, keyless public truth)",
- "generatedAt": "2026-10-13T02:00:19Z",
+ "generatedAt": "2026-10-13T02:07:14Z",
  "commit": "81697c0fb7ac95ebace5f65336725ae8d3528a01",
  "commitDate": "2026-10-10T06:01:51Z",
  "branch": "main",
@@ -16,6 +16,16 @@
  "awakening": "[REDACTED — P0-1: restoration/custody detail removed from public surface, master-plan T6, session 8fa4709b]",
  "doctrine": "[REDACTED — P0-1: restoration/custody detail removed from public surface, master-plan T6, session 8fa4709b]",
  "pulses": [
+  {
+   "at": "2026-10-13T02:07:14Z",
+   "steemHead": 110391712,
+   "treasuryNetSp": 2810.7,
+   "minOperatorSp": 11.8,
+   "degraded": true,
+   "degradedWhy": [
+    "raw.githubusercontent.com:HTTP Error 404: Not Found"
+   ]
+  },
   {
    "at": "2026-10-13T02:00:19Z",
    "steemHead": 110391576,
@@ -196,8 +206,8 @@
   }
  ],
  "lastPulse": {
-  "at": "2026-10-13T02:00:19Z",
-  "steemHead": 110391576,
+  "at": "2026-10-13T02:07:14Z",
+  "steemHead": 110391712,
   "treasuryNetSp": 2810.7,
   "minOperatorSp": 11.8,
   "degraded": true,
