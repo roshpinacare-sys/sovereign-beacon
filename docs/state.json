@@ -1,7 +1,7 @@
 {
  "schema": "roshpina.sovereign-beacon/1",
  "publisher": "beacon-pulse (GitHub Actions, keyless public truth)",
- "generatedAt": "2026-10-14T09:30:21Z",
+ "generatedAt": "2026-10-14T11:30:25Z",
  "commit": "81697c0fb7ac95ebace5f65336725ae8d3528a01",
  "commitDate": "2026-10-10T06:01:51Z",
  "branch": "main",
@@ -16,6 +16,16 @@
  "awakening": "[REDACTED — P0-1: restoration/custody detail removed from public surface, master-plan T6, session 8fa4709b]",
  "doctrine": "[REDACTED — P0-1: restoration/custody detail removed from public surface, master-plan T6, session 8fa4709b]",
  "pulses": [
+  {
+   "at": "2026-10-14T11:30:25Z",
+   "steemHead": 110431479,
+   "treasuryNetSp": 2810.7,
+   "minOperatorSp": 31.2,
+   "degraded": true,
+   "degradedWhy": [
+    "raw.githubusercontent.com:HTTP Error 404: Not Found"
+   ]
+  },
   {
    "at": "2026-10-14T09:30:21Z",
    "steemHead": 110429090,
@@ -386,10 +396,10 @@
   }
  ],
  "lastPulse": {
-  "at": "2026-10-14T09:30:21Z",
-  "steemHead": 110429090,
-  "treasuryNetSp": 2841.8,
-  "minOperatorSp": 11.9,
+  "at": "2026-10-14T11:30:25Z",
+  "steemHead": 110431479,
+  "treasuryNetSp": 2810.7,
+  "minOperatorSp": 31.2,
   "degraded": true,
   "degradedWhy": [
    "raw.githubusercontent.com:HTTP Error 404: Not Found"
