@@ -1,4 +1,9 @@
 # sovereign-beacon
+
+[![SAOS office](https://roshpinacare-sys.github.io/Domain/badge/office.svg)](https://roshpinacare-sys.github.io/Domain/office3d/)
+[![SAOS fleet](https://roshpinacare-sys.github.io/Domain/badge/fleet.svg)](https://roshpinacare-sys.github.io/Domain/status/)
+[![steem-edge](https://roshpinacare-sys.github.io/Domain/badge/edge.svg)](https://roshpinacare-sys.github.io/Domain/money.html)
+
 Rosh Pina — sovereign lighthouse (out-of-machine console)
 
 **ROLE (2026-10-11, task 10-c):** the **GitLab-rail public beacon** — the
