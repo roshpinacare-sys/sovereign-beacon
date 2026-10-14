@@ -1,7 +1,7 @@
 {
  "schema": "roshpina.sovereign-beacon/1",
  "publisher": "beacon-pulse (GitHub Actions, keyless public truth)",
- "generatedAt": "2026-10-14T13:30:24Z",
+ "generatedAt": "2026-10-14T13:51:37Z",
  "commit": "81697c0fb7ac95ebace5f65336725ae8d3528a01",
  "commitDate": "2026-10-10T06:01:51Z",
  "branch": "main",
@@ -16,6 +16,16 @@
  "awakening": "[REDACTED — P0-1: restoration/custody detail removed from public surface, master-plan T6, session 8fa4709b]",
  "doctrine": "[REDACTED — P0-1: restoration/custody detail removed from public surface, master-plan T6, session 8fa4709b]",
  "pulses": [
+  {
+   "at": "2026-10-14T13:51:37Z",
+   "steemHead": 110434286,
+   "treasuryNetSp": 2810.7,
+   "minOperatorSp": 31.2,
+   "degraded": true,
+   "degradedWhy": [
+    "raw.githubusercontent.com:HTTP Error 404: Not Found"
+   ]
+  },
   {
    "at": "2026-10-14T13:30:24Z",
    "steemHead": 110433866,
@@ -394,20 +404,11 @@
    "minOperatorSp": 11.9,
    "degraded": false,
    "degradedWhy": []
-  },
-  {
-   "at": "2026-10-11T19:26:32Z",
-   "sandboxLedgerLastLine": "2026-10-11 | zai-code-3 | פנקסי-E: SOVEREIGN-REVIVAL (טריאז'-פתיחה-לכל-תיקייה-מושתקת) + GROWTH-PLAN (לולאת-ערך",
-   "steemHead": 110355031,
-   "treasuryNetSp": 2925.6,
-   "minOperatorSp": 11.9,
-   "degraded": false,
-   "degradedWhy": []
   }
  ],
  "lastPulse": {
-  "at": "2026-10-14T13:30:24Z",
-  "steemHead": 110433866,
+  "at": "2026-10-14T13:51:37Z",
+  "steemHead": 110434286,
   "treasuryNetSp": 2810.7,
   "minOperatorSp": 31.2,
   "degraded": true,
