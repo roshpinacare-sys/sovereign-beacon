@@ -1,7 +1,7 @@
 {
  "schema": "roshpina.sovereign-beacon/1",
  "publisher": "beacon-pulse (GitHub Actions, keyless public truth)",
- "generatedAt": "2026-10-14T20:30:22Z",
+ "generatedAt": "2026-10-14T22:24:09Z",
  "commit": "81697c0fb7ac95ebace5f65336725ae8d3528a01",
  "commitDate": "2026-10-10T06:01:51Z",
  "branch": "main",
@@ -16,6 +16,16 @@
  "awakening": "[REDACTED — P0-1: restoration/custody detail removed from public surface, master-plan T6, session 8fa4709b]",
  "doctrine": "[REDACTED — P0-1: restoration/custody detail removed from public surface, master-plan T6, session 8fa4709b]",
  "pulses": [
+  {
+   "at": "2026-10-14T22:24:09Z",
+   "steemHead": 110444502,
+   "treasuryNetSp": 2810.8,
+   "minOperatorSp": 11.9,
+   "degraded": true,
+   "degradedWhy": [
+    "raw.githubusercontent.com:HTTP Error 404: Not Found"
+   ]
+  },
   {
    "at": "2026-10-14T20:30:22Z",
    "steemHead": 110442232,
@@ -399,20 +409,11 @@
    "minOperatorSp": 11.9,
    "degraded": false,
    "degradedWhy": []
-  },
-  {
-   "at": "2026-10-12T01:43:26Z",
-   "sandboxLedgerLastLine": "- **שיעור-תיאום-לצי:** הצו-הגיע-לכמה-סוכנים-במקביל — שני-מימושים-לאותו-ערוץ-בתוך-שעה. המיזוג-היה-אפשרי-בגלוי-ש",
-   "steemHead": 110362542,
-   "treasuryNetSp": 2925.6,
-   "minOperatorSp": 11.9,
-   "degraded": false,
-   "degradedWhy": []
   }
  ],
  "lastPulse": {
-  "at": "2026-10-14T20:30:22Z",
-  "steemHead": 110442232,
+  "at": "2026-10-14T22:24:09Z",
+  "steemHead": 110444502,
   "treasuryNetSp": 2810.8,
   "minOperatorSp": 11.9,
   "degraded": true,
