@@ -1,7 +1,7 @@
 {
  "schema": "roshpina.sovereign-beacon/1",
  "publisher": "beacon-pulse (GitHub Actions, keyless public truth)",
- "generatedAt": "2026-10-15T04:30:19Z",
+ "generatedAt": "2026-10-15T05:57:57Z",
  "commit": "81697c0fb7ac95ebace5f65336725ae8d3528a01",
  "commitDate": "2026-10-10T06:01:51Z",
  "branch": "main",
@@ -16,6 +16,16 @@
  "awakening": "[REDACTED — P0-1: restoration/custody detail removed from public surface, master-plan T6, session 8fa4709b]",
  "doctrine": "[REDACTED — P0-1: restoration/custody detail removed from public surface, master-plan T6, session 8fa4709b]",
  "pulses": [
+  {
+   "at": "2026-10-15T05:57:57Z",
+   "steemHead": 110453548,
+   "treasuryNetSp": 2810.7,
+   "minOperatorSp": 12.0,
+   "degraded": true,
+   "degradedWhy": [
+    "raw.githubusercontent.com:HTTP Error 404: Not Found"
+   ]
+  },
   {
    "at": "2026-10-15T04:30:19Z",
    "steemHead": 110451803,
@@ -404,20 +414,11 @@
    "minOperatorSp": 11.9,
    "degraded": false,
    "degradedWhy": []
-  },
-  {
-   "at": "2026-10-12T10:01:10Z",
-   "sandboxLedgerLastLine": "- **דחיפות:** Sandbox 66612a8+c9c804e+a00b6fc · saos-runtime b7e80d6+d417ada+52b8499. הכל-בדקות-ציבוריות-חינם,",
-   "steemHead": 110372463,
-   "treasuryNetSp": 2925.7,
-   "minOperatorSp": 11.9,
-   "degraded": false,
-   "degradedWhy": []
   }
  ],
  "lastPulse": {
-  "at": "2026-10-15T04:30:19Z",
-  "steemHead": 110451803,
+  "at": "2026-10-15T05:57:57Z",
+  "steemHead": 110453548,
   "treasuryNetSp": 2810.7,
   "minOperatorSp": 12.0,
   "degraded": true,
