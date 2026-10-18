@@ -1,7 +1,7 @@
 {
  "schema": "roshpina.sovereign-beacon/1",
  "publisher": "beacon-pulse (GitHub Actions, keyless public truth)",
- "generatedAt": "2026-10-18T11:00:25Z",
+ "generatedAt": "2026-10-18T11:25:13Z",
  "commit": "81697c0fb7ac95ebace5f65336725ae8d3528a01",
  "commitDate": "2026-10-10T06:01:51Z",
  "branch": "main",
@@ -16,6 +16,16 @@
  "awakening": "[REDACTED — P0-1: restoration/custody detail removed from public surface, master-plan T6, session 8fa4709b]",
  "doctrine": "[REDACTED — P0-1: restoration/custody detail removed from public surface, master-plan T6, session 8fa4709b]",
  "pulses": [
+  {
+   "at": "2026-10-18T11:25:13Z",
+   "steemHead": 110545726,
+   "treasuryNetSp": 2874.7,
+   "minOperatorSp": 41.7,
+   "degraded": true,
+   "degradedWhy": [
+    "raw.githubusercontent.com:HTTP Error 404: Not Found"
+   ]
+  },
   {
    "at": "2026-10-18T11:00:25Z",
    "steemHead": 110545256,
@@ -405,21 +415,11 @@
    "degradedWhy": [
     "raw.githubusercontent.com:HTTP Error 404: Not Found"
    ]
-  },
-  {
-   "at": "2026-10-14T18:00:24Z",
-   "steemHead": 110439244,
-   "treasuryNetSp": 2810.7,
-   "minOperatorSp": 11.9,
-   "degraded": true,
-   "degradedWhy": [
-    "raw.githubusercontent.com:HTTP Error 404: Not Found"
-   ]
   }
  ],
  "lastPulse": {
-  "at": "2026-10-18T11:00:25Z",
-  "steemHead": 110545256,
+  "at": "2026-10-18T11:25:13Z",
+  "steemHead": 110545726,
   "treasuryNetSp": 2874.7,
   "minOperatorSp": 41.7,
   "degraded": true,
