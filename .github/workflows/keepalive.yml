@@ -1,0 +1,38 @@
+# beat-keepalive — the cross-repo schedule lottery (wave-19.5)
+#
+# MEASURED (2026-10-18): GitHub drops scheduled events under load — the
+# executor's own cron fired 1 slot out of 7, then 6/6 dropped after the */15
+# density change. A single repo's cron is NOT a sovereign trigger. This lane
+# lives in a DIFFERENT repo (this one): its slots draw from an independent
+# drop-lottery and it dispatches the executor's fleet-beat ONLY when the last
+# beat is stale (>=55min — the executor's own interval gate keeps over-wakes
+# harmless: extra slots become green skips at ~zero minutes).
+#
+# SECRET-SURFACE LAW: schedule + workflow_dispatch ONLY — a pull_request
+# trigger is FORBIDDEN in any lane that touches SOVEREIGN_PAT.
+# FAIL-CLOSED: missing credential or API error reddens this lane honestly.
+
+name: beat-keepalive
+
+on:
+  schedule:
+    - cron: '*/20 * * * *'   # decorrelated from runner-kit's */15 — three lottery tickets per hour, offset draws
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: beat-keepalive
+  cancel-in-progress: false
+
+jobs:
+  keepalive:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Keepalive (independent schedule lottery -> wake the beat only if stale)
+        env:
+          SOVEREIGN_PAT: ${{ secrets.SOVEREIGN_PAT }}
+        run: python3 scripts/beat-keepalive.py
