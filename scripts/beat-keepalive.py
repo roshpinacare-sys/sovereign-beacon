@@ -11,6 +11,16 @@ independent drop-lottery. Each slot: read the executor's fleet-beat last-run
 age via the API and dispatch the beat ONLY if it is stale (>= KEEPALIVE_STALE_MIN,
 default 55min — the same threshold as the executor's own interval gate).
 
+LIFELINE LAW (wave-19.10): the switch-guard lives on the plane it guards —
+if the executor's OWN repo-level Actions switch is flipped OFF, the hourly
+guard dies with the beat and nothing self-heals. This lane is the outside
+observer: when the wake dispatch fails, it probes the executor's
+actions/permissions and names the true cause. A switch-OFF heart is the one
+failure this fleet cannot heal autonomously — it is diagnosed loudly for the
+owner, never silently mistaken for a permissions problem. (Honest boundary:
+if THIS repo's switch is flipped, the lane cannot even run — the beacon lane
+carries the same diagnosis as the redundant second observer.)
+
 Laws:
 - secret-surface: schedule + workflow_dispatch only; pull_request forbidden.
 - fail-closed: any API error or missing credential reddens this lane with a
@@ -52,6 +62,29 @@ def api(method, path, token, body=None):
         return r.status, (json.loads(raw) if raw else None)
 
 
+def diagnose_dispatch_failure(tok):
+    """LIFELINE LAW (wave-19.10): name the TRUE cause of a failed wake.
+    Returns the diagnostic line; the caller prints and fails closed."""
+    try:
+        st, perms = api('GET', '/repos/%s/actions/permissions' % EXECUTOR, tok)
+        enabled = bool((perms or {}).get('enabled', True))
+    except Exception as e:
+        return clean('lifeline: dispatch failed AND the switch probe failed (%s) — '
+                     'the heart is unreachable, owner decision required' % e)
+    if st == 200 and not enabled:
+        return ('lifeline: THE HEART\'S SWITCH IS OFF — executor '
+                'actions/permissions.enabled=false. The beat cannot start, the '
+                'hourly guard died with it (it lives on the guarded plane), and '
+                'nothing self-heals. This is the one failure the fleet cannot '
+                'fix autonomously — owner decision required. (Re-arm order '
+                'standing: trace 1a1512554a26f66d covers the approved 18; the '
+                'executor itself needs its own word.)')
+    if st == 200:
+        return clean('keepalive: FAIL-CLOSED — dispatch rejected (switch is ON; '
+                     'likely missing Actions:write scope on the credential)')
+    return clean('lifeline: dispatch failed; switch probe HTTP %s — diagnose manually' % st)
+
+
 def main():
     tok = os.environ.get('SOVEREIGN_PAT', '')
     if not tok:
@@ -85,7 +118,10 @@ def main():
         st, _ = api('POST', '/repos/%s/actions/workflows/%s/dispatches' % (EXECUTOR, WORKFLOW),
                     tok, {'ref': 'main'})
     except HTTPError as e:
-        print(clean('keepalive: FAIL-CLOSED — dispatch HTTP %s (need Actions:write on the executor)' % e.code))
+        if e.code in (403, 422):
+            print(diagnose_dispatch_failure(tok))
+        else:
+            print(clean('keepalive: FAIL-CLOSED — dispatch HTTP %s (need Actions:write on the executor)' % e.code))
         return 1
     except Exception as e:
         print(clean('keepalive: FAIL-CLOSED — dispatch error: %s' % e))
