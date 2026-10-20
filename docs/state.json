@@ -1,7 +1,7 @@
 {
  "schema": "roshpina.sovereign-beacon/1",
  "publisher": "beacon-pulse (GitHub Actions, keyless public truth)",
- "generatedAt": "2026-10-20T02:30:26Z",
+ "generatedAt": "2026-10-20T05:00:22Z",
  "commit": "81697c0fb7ac95ebace5f65336725ae8d3528a01",
  "commitDate": "2026-10-10T06:01:51Z",
  "branch": "main",
@@ -16,6 +16,15 @@
  "awakening": "[REDACTED — P0-1: restoration/custody detail removed from public surface, master-plan T6, session 8fa4709b]",
  "doctrine": "[REDACTED — P0-1: restoration/custody detail removed from public surface, master-plan T6, session 8fa4709b]",
  "pulses": [
+  {
+   "at": "2026-10-20T05:00:22Z",
+   "sandboxLedgerLastLine": "2026-10-14 | zai-main-1a13bc8fcf41c00d | giant-v2-מערכת-אמיתית (הוראת-בעלים: roast-מוצר — לא-דף-AI-גנרי-אלא-מע",
+   "steemHead": 110591977,
+   "treasuryNetSp": 2740.7,
+   "minOperatorSp": 20.5,
+   "degraded": false,
+   "degradedWhy": []
+  },
   {
    "at": "2026-10-20T02:30:26Z",
    "steemHead": 110589011,
@@ -405,26 +414,15 @@
    "degradedWhy": [
     "raw.githubusercontent.com:HTTP Error 404: Not Found"
    ]
-  },
-  {
-   "at": "2026-10-16T11:30:25Z",
-   "steemHead": 110488654,
-   "treasuryNetSp": 2810.8,
-   "minOperatorSp": 12.1,
-   "degraded": true,
-   "degradedWhy": [
-    "raw.githubusercontent.com:HTTP Error 404: Not Found"
-   ]
   }
  ],
  "lastPulse": {
-  "at": "2026-10-20T02:30:26Z",
-  "steemHead": 110589011,
-  "treasuryNetSp": 2740.6,
+  "at": "2026-10-20T05:00:22Z",
+  "sandboxLedgerLastLine": "2026-10-14 | zai-main-1a13bc8fcf41c00d | giant-v2-מערכת-אמיתית (הוראת-בעלים: roast-מוצר — לא-דף-AI-גנרי-אלא-מע",
+  "steemHead": 110591977,
+  "treasuryNetSp": 2740.7,
   "minOperatorSp": 20.5,
-  "degraded": true,
-  "degradedWhy": [
-   "raw.githubusercontent.com:HTTP Error 404: Not Found"
-  ]
+  "degraded": false,
+  "degradedWhy": []
  }
 }
