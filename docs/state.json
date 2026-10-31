@@ -1,7 +1,7 @@
 {
  "schema": "roshpina.sovereign-beacon/1",
  "publisher": "beacon-pulse (GitHub Actions, keyless public truth)",
- "generatedAt": "2026-10-31T01:41:03Z",
+ "generatedAt": "2026-10-31T08:34:19Z",
  "commit": "81697c0fb7ac95ebace5f65336725ae8d3528a01",
  "commitDate": "2026-10-10T06:01:51Z",
  "branch": "main",
@@ -16,6 +16,15 @@
  "awakening": "[REDACTED — P0-1: restoration/custody detail removed from public surface, master-plan T6, session 8fa4709b]",
  "doctrine": "[REDACTED — P0-1: restoration/custody detail removed from public surface, master-plan T6, session 8fa4709b]",
  "pulses": [
+  {
+   "at": "2026-10-31T08:34:19Z",
+   "sandboxLedgerLastLine": "2026-10-14 | zai-main-1a13bc8fcf41c00d | giant-v2-מערכת-אמיתית (הוראת-בעלים: roast-מוצר — לא-דף-AI-גנרי-אלא-מע",
+   "steemHead": 110911287,
+   "treasuryNetSp": 1511.2,
+   "minOperatorSp": 41.2,
+   "degraded": false,
+   "degradedWhy": []
+  },
   {
    "at": "2026-10-31T01:41:03Z",
    "sandboxLedgerLastLine": "2026-10-14 | zai-main-1a13bc8fcf41c00d | giant-v2-מערכת-אמיתית (הוראת-בעלים: roast-מוצר — לא-דף-AI-גנרי-אלא-מע",
@@ -366,22 +375,13 @@
    "minOperatorSp": 40.2,
    "degraded": false,
    "degradedWhy": []
-  },
-  {
-   "at": "2026-10-26T14:27:31Z",
-   "sandboxLedgerLastLine": "2026-10-14 | zai-main-1a13bc8fcf41c00d | giant-v2-מערכת-אמיתית (הוראת-בעלים: roast-מוצר — לא-דף-AI-גנרי-אלא-מע",
-   "steemHead": 110775013,
-   "treasuryNetSp": 3661.0,
-   "minOperatorSp": 40.2,
-   "degraded": false,
-   "degradedWhy": []
   }
  ],
  "lastPulse": {
-  "at": "2026-10-31T01:41:03Z",
+  "at": "2026-10-31T08:34:19Z",
   "sandboxLedgerLastLine": "2026-10-14 | zai-main-1a13bc8fcf41c00d | giant-v2-מערכת-אמיתית (הוראת-בעלים: roast-מוצר — לא-דף-AI-גנרי-אלא-מע",
-  "steemHead": 110903061,
-  "treasuryNetSp": 1511.1,
+  "steemHead": 110911287,
+  "treasuryNetSp": 1511.2,
   "minOperatorSp": 41.2,
   "degraded": false,
   "degradedWhy": []
